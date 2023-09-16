@@ -1,0 +1,54 @@
+## Penjelasan Kode
+
+
+# ID
+print("Nama: Nadya P. Arisni")
+print("NRP: 5009211079")
+```
+
+- Pada awal kode, kita melihat komentar dengan format `# -*- coding: utf-8 -*-`. Ini adalah aturan bagi Python yang memberitahu Python bahwa teks dalam berkas ini menggunakan encoding UTF-8. Ini penting jika Anda memiliki karakter khusus atau tanda diakritik dalam kode Anda.
+
+- Di bawahnya, ada komentar dengan tanda `"""`. Ini adalah komentar multiline yang dapat digunakan untuk memberikan deskripsi atau dokumentasi singkat tentang kode. Ini sering digunakan sebagai bagian dari dokumen penjelasan berkas (seperti yang kami lakukan di sini) atau sebagai docstring untuk fungsi dan kelas yang akan Anda buat.
+
+- Baris selanjutnya (`# ID`) adalah komentar biasa yang memberikan label kepada bagian berikutnya dari kode. Dalam hal ini, kita memberikan label "ID".
+
+- Selanjutnya, kita cetak nama ("Nama: Nadya P. Arisni") dan NRP ("NRP: 5009211079") ke konsol sebagai informasi identitas. Ini adalah tugas awal dalam kode Anda.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+- Di sini, kita mengimpor dua pustaka, yaitu NumPy dan Matplotlib. NumPy adalah pustaka yang kuat untuk komputasi numerik, sementara Matplotlib digunakan untuk membuat plot dan visualisasi data.
+
+```python
+def generate_sine_wave(frequency, duration, sampling_rate):
+    t = np.arange(0, duration, 1/sampling_rate)
+    signal = np.sin(2 * np.pi * frequency * t)
+    return t, signal
+```
+
+- Ini adalah definisi fungsi `generate_sine_wave` yang digunakan untuk menghasilkan gelombang sinus. Fungsi ini menerima tiga argumen: frekuensi, durasi, dan laju sampel. Itu kemudian menghasilkan waktu `t` dan sinyal `signal` yang merupakan gelombang sinus dengan frekuensi yang diberikan.
+
+```python
+def add_noise(signal, noise_amplitude):
+    noise = np.random.normal(0, noise_amplitude, len(signal))
+    noisy_signal = signal + noise
+    return noisy_signal
+```
+
+- Fungsi `add_noise` mengambil sinyal dan amplitudo noise sebagai argumen. Ini kemudian menambahkan noise Gaussian acak dengan amplitudo yang diberikan ke sinyal asli.
+
+```python
+def calculate_fft(signal, sampling_rate):
+    n = len(signal)
+    fft_result = np.fft.fft(signal)
+    frequencies = np.fft.fftfreq(n, 1/sampling_rate)
+    return frequencies, fft_result
+```
+
+- Fungsi `calculate_fft` digunakan untuk menghitung Transformasi Fourier dari sinyal yang diberikan. Ini menghasilkan array frekuensi dan hasil FFT dari sinyal.
+
+Selanjutnya, kode tersebut mengatur beberapa parameter seperti frekuensi, durasi, laju sampel, dan amplitudo noise untuk menghasilkan gelombang sinus, menambahkan noise, dan menghitung FFT.
+
+Terakhir, kode tersebut menggunakan Matplotlib untuk membuat tiga subplot yang menampilkan gelombang sinus asli, sinyal berisik, dan hasil FFT dari sinyal berisik. Subplot-subplot ini digunakan untuk visualisasi hasil dari pemrosesan sinyal yang telah dilakukan oleh kode tersebut.
